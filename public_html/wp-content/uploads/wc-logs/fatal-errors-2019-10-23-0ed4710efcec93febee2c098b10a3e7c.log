@@ -1,0 +1,7 @@
+2019-10-23T20:56:16+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/libraries/action-scheduler/classes/ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/libraries/action-scheduler/classes/ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/libraries/action-scheduler/classes/ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/libraries/action-scheduler/functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1571864176, 3600, 'wc-admin-notes')
+#3 /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/queue/class-wc-ac en /storage/ssd4/912/10901912/public_html/wp-content/plugins/woocommerce/includes/libraries/action-scheduler/classes/ActionScheduler_wpPostStore.php en la línea 33
+

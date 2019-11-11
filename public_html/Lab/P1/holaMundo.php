@@ -1,21 +1,3 @@
-<?php
-
-/**
- * * Descripción: Hola Mundo PHP
- * *
- * * Descripción extensa: Iremos añadiendo cosas complejas en PHP.
- * *
- * * @author  Lola <dllido@uji.es> <fulanito@example.com>
- * * @copyright 2017 Lola
- * * @license http://www.fsf.org/licensing/licenses/gpl.txt GPL 2 or later
- * * @version 1
- * */
-
-$nombre = "Ana";
-
-print("<P>Hola, $nombre</P>");
-if (isset($argv[1])) {
-    print("<p> Adios, $argv[1]</P>");
-}
-print "\nFIN";
-?>
+version https://git-lfs.github.com/spec/v1
+oid sha256:f35b1b20b84a15caa7d24d7d63ac1c08c6a09ade27230bd73e7578d1e03271df
+size 455
