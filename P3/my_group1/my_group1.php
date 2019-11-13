@@ -29,7 +29,7 @@ include(plugin_dir_path( __FILE__ ).'include/functions.php');
 
 register_activation_hook( __FILE__, 'MP_Ejecutar_crearT');
 
-//add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
+add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
 function MP_Ejecutar_crearT(){
     MP_CrearT("A_GrupoCliente000");
 }
