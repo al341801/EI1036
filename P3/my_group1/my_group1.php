@@ -23,17 +23,17 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 //La siguiente sentencia activaria la acción para todos los usuarios.
-//add_action('admin_post_nopriv_my_datos', 'my_datos');
+add_action('admin_post_nopriv_my_datos', 'my_datos');
 $table="A_GrupoCliente000";
 include(plugin_dir_path( __FILE__ ).'include/functions.php');
 
 register_activation_hook( __FILE__, 'MP_Ejecutar_crearT');
 
-//add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
+add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
 function MP_Ejecutar_crearT(){
     MP_CrearT("A_GrupoCliente000");
 }
-//add_action('admin_post_nopriv_my_datos', 'MP_my_datos'); //no autentificados
-add_action('admin_post_my_datos', "MP_my_datos"); 
+add_action('admin_post_nopriv_my_datos', 'MP_my_datos'); //no autentificados
+//add_action('admin_post_my_datos', "MP_my_datos"); 
 
 ?>
