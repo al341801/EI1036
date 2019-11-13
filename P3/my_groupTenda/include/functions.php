@@ -143,6 +143,14 @@ function MP_my_datos()
     }
 
     get_footer();
+    
+       $fotoURL="";
+   $IMAGENES_USUARIOS = '../fotos/';
+   if(array_key_exists('foto', $_FILES) && $_POST['email']) {
+     $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+     if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+        { echo "foto subida con éxito";
+   } }
     }
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
 //add_action('admin_post_my_datos', 'my_datos'); //no autentificados
