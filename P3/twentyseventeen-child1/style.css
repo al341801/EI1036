@@ -20,4 +20,37 @@
     color: green;
 
 }
+
+
+#cola{
+	position:fixed; 
+	right:0px;
+	bottom:0px;
+	background-color: #b8db37;
+	color: red;
+	padding:1em;
+	font:bold 2 em arial, sans-serif;
+	text-decoration:blink;
+	animation: mymove 3s;
+	animation-iteration-count: 30;
+	animation-direction: alternate;
+}
+
+header{
+
+	font-family: Castellar;
+	filter: grayscale(90%);
+	image-rendering: auto;
+}
+.i{
+  
+	width:250px;
+	height:400px;
+  
+}
+body{
+	font-family: Arial;
+	
+}
+
  
