@@ -37,6 +37,13 @@ function MP_Ejecutar_crearT(){
 add_action('admin_post_my_datos', "MP_my_datos"); 
 
 
+$fotoURL="";
+   $IMAGENES_USUARIOS = '../fotos/';
+   if(array_key_exists('foto', $_FILES) && $_POST['email']) {
+     $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+ 	 if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+        { echo "foto subida con éxito";
+   } }
 
 
 ?>
