@@ -31,10 +31,10 @@ register_activation_hook( __FILE__, 'MP_Ejecutar_crearT');
 
 //add_action( 'plugins_loaded', 'Ejecutar_crearT' ); // esto se ejecuta siempre que se llama al plugin
 function m_MP_Ejecutar_crearT(){
-    MP_CrearT("A_GrupoCliente000");
+    m_MP_CrearT("A_GrupoCliente000");
 }
 //add_action('admin_post_nopriv_my_datos', 'MP_my_datos'); //no autentificados
-add_action('admin_post_my_datos', "MP_my_datos"); 
+add_action('admin_post_my_datos', "m_MP_my_datos"); 
 
 
 $fotoURL="";
