@@ -29,7 +29,7 @@ function MP1_CrearT($tabla){
 }
 
 
-function MP1_Register_Form($MP_user , $user_email)
+function MP1_Register_Form($MP_user , $user_email, $foto_file)
 {//formulario registro amigos de $user_email
     ?>
     <h1>Gestión de Usuarios </h1>
@@ -50,6 +50,20 @@ function MP1_Register_Form($MP_user , $user_email)
         <input type="text" name="email" class="item_requerid" size="20" maxlength="25" value="<?php print $MP_user["email"] ?>"
         placeholder="kiko@ic.es" />
         <br/>
+         <input type="text" name="foto_file" class="item_requerid" size="30" maxlength="35" value="<?php print $MP_user["foto_file"] ?>"
+        placeholder="kiko@ic.es" />
+        <br/>
+        <?php
+        $fotoURL="";
+   $IMAGENES_USUARIOS = '../fotos/';
+   if(array_key_exists('foto', $_FILES) && $_POST['email']) {
+     $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+ 	 if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+        { echo "foto subida con éxito";
+   } }
+             ?>
+
+        
         <input type="submit" value="Enviar">
         <input type="reset" value="Deshacer">
     </form>
@@ -82,15 +96,17 @@ function MP1_my_datos()
     switch ($_REQUEST['proceso']) {
         case "registro":
             $MP_user=null; //variable a rellenar cuando usamos modificar con este formulario
-            MP1_Register_Form($MP_user,$user_email);
+            MP1_Register_Form($MP_user,$user_email, $foto_file);
+            
+           
             break;
         case "registrar":
             if (count($_REQUEST) < 3) {
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
-            $query = "INSERT INTO $table (nombre, email,clienteMail) VALUES (?,?,?)";         
-            $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'] );
+            $query = "INSERT INTO $table (nombre, email,clienteMail, foto_file) VALUES (?,?,?,?)";         
+            $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'],$_REQUEST['foto_file'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
@@ -146,4 +162,7 @@ function MP1_my_datos()
     }
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
 //add_action('admin_post_my_datos', 'my_datos'); //no autentificados
+
+
+
 ?>
