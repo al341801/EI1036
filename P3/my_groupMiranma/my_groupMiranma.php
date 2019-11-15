@@ -33,7 +33,7 @@ register_activation_hook( __FILE__, 'MP1_Ejecutar_crearT');
 function MP1_Ejecutar_crearT(){
     MP1_CrearT("A_GrupoClienteMiranma");
 }
-//add_action('admin_post_nopriv_my_datos', 'MP_my_datos'); //no autentificados
+add_action('admin_post_nopriv_my_datos', 'MP1_my_datos'); //no autentificados
 add_action('admin_post_my_datos', "MP1_my_datos"); 
 
 
