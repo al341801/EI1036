@@ -34,7 +34,7 @@ function MP1_Register_Form($MP_user , $user_email, $foto_file)
     ?>
     <h1>Gestión de Usuarios </h1>
     <legend>Datos básicos</legend>
-    <form class="fom_usuario" action="?action=my_datos&proceso=registrar" method="POST">
+    <form class="fom_usuario" action="?action=my1_datos&proceso=registrar" method="POST">
         <label for="clienteMail">Tu correo</label>
         <br/>
         <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $user_email?>"
@@ -52,7 +52,7 @@ function MP1_Register_Form($MP_user , $user_email, $foto_file)
         placeholder="kiko@ic.es" />
         <br/>
          <input type="text" name="foto_file" class="item_requerid" size="30" maxlength="35" value="<?php print $MP_user["foto_file"] ?>"
-        " />
+         placeholder="foto" />
         <br/>
         <?php
         $fotoURL="";
