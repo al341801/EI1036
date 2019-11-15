@@ -55,7 +55,7 @@ function MP1_Register_Form($MP_user , $user_email, $foto_file)
          placeholder="foto" />
         <br/>
         <br>
-        <img src='".$image."' />
+        <img longdesc="string">
         </br>
         <?php
         $fotoURL="";
