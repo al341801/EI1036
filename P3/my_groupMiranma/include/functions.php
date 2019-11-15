@@ -54,6 +54,9 @@ function MP1_Register_Form($MP_user , $user_email, $foto_file)
          <input type="img" name="foto_file" class="item_requerid"value="<?php print $MP_user["foto_file"] ?>"
          placeholder="foto" />
         <br/>
+        <br>
+        <img src='".$image."' />
+        </br>
         <?php
         $fotoURL="";
    $IMAGENES_USUARIOS = '../fotos/';
