@@ -89,8 +89,6 @@ function MP_my_datos()
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
-            
-     
             $query = "INSERT INTO $table (nombre, email,clienteMail) VALUES (?,?,?)";         
             $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
@@ -145,8 +143,7 @@ function MP_my_datos()
     }
 
     get_footer();
-    
-
+    }
 //add_action('admin_post_nopriv_my_datos', 'my_datos');
 //add_action('admin_post_my_datos', 'my_datos'); //no autentificados
 ?>
