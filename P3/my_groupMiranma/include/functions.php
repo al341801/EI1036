@@ -51,21 +51,10 @@ function MP1_Register_Form($MP_user , $user_email, $foto_file)
         <input type="text" name="email" class="item_requerid" size="20" maxlength="25" value="<?php print $MP_user["email"] ?>"
         placeholder="kiko@ic.es" />
         <br/>
-         <input type="img" name="foto_file" class="item_requerid"value="<?php print $MP_user["foto_file"] ?>"
+         <input type="file" name="foto_file" class="item_requerid"value="<?php print $MP_user["foto_file"] ?>"
          placeholder="foto" />
         <br/>
-        <br>
-        <img longdesc="string">
-        </br>
-        <?php
-        $fotoURL="";
-   $IMAGENES_USUARIOS = '../fotos/';
-   if(array_key_exists('foto', $_FILES) && $_POST['email']) {
-     $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
- 	 if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
-        { echo "foto subida con éxito";
-   } }
-             ?>
+   
 
         
         <input type="submit" value="Enviar">
@@ -109,13 +98,24 @@ function MP1_my_datos()
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
+            
+            $fotoURL="";
+            $IMAGENES_USUARIOS = '../fotos/';
+            if(array_key_exists('foto', $_FILES) && $_POST['email']) {
+                $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+                echo $fotoURL;
+ 	            if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+                { echo "foto subida con éxito";
+            } }
+           
             $query = "INSERT INTO $table (nombre, email,clienteMail, foto_file) VALUES (?,?,?,?)";         
             $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'],$_REQUEST['foto_file'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
-            if (1>$a) {echo "InCorrecto $query";}
-            else wp_redirect(admin_url( 'admin-post.php?action=my1_datos&proceso=listar'));
+            var_dump($_FILES);
+            //if (1>$a) {echo "InCorrecto $query";}
+            //else wp_redirect(admin_url( 'admin-post.php?action=my1_datos&proceso=listar'));
             break;
         case "listar":
             //Listado amigos o de todos si se es administrador.
