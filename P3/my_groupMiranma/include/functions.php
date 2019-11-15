@@ -112,7 +112,7 @@ function MP1_my_datos()
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
             if (1>$a) {echo "InCorrecto $query";}
-            else wp_redirect(admin_url( 'admin-post.php?action=my_datos&proceso=listar'));
+            else wp_redirect(admin_url( 'admin-post.php?action=my1_datos&proceso=listar'));
             break;
         case "listar":
             //Listado amigos o de todos si se es administrador.
@@ -161,8 +161,8 @@ function MP1_my_datos()
 
     get_footer();
     }
-//add_action('admin_post_nopriv_my_datos', 'my_datos');
-//add_action('admin_post_my_datos', 'my_datos'); //no autentificados
+//add_action('admin_post_nopriv_my_datos', 'my1_datos');
+//add_action('admin_post_my_datos', 'my1_datos'); //no autentificados
 
 
 
