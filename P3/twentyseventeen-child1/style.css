@@ -50,8 +50,12 @@ header{
 }
 body{
 	font-family: Arial;
-	width: 80%;
 	
+}
+
+div{
+	width: 80%;
+	text-align:left;
 }
 
  
