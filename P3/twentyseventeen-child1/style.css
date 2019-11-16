@@ -40,6 +40,7 @@ header{
 
 	font-family: Castellar;
 	filter: grayscale(90%);
+	width:90%;
 	image-rendering: auto;
 }
 .i{
