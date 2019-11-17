@@ -35,6 +35,11 @@
 	animation-iteration-count: 30;
 	animation-direction: alternate;
 }
+.wp-custom-header{
+	width:1500px;
+	height:1400px;
+	margin auto;
+}
 
 header{
 
@@ -54,12 +59,12 @@ body{
 	
 }
 
-div{
+.div{
 	width: 80%;
 	text-align:left;
 }
 
-icon, svg{
+.icon, .svg{
 	width:50px;
 	height:40px;
 }
