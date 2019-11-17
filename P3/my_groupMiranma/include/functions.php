@@ -22,6 +22,7 @@ function hook_css() {
        <style>
            .wp_head_example {
                background-color : #f1f1f1;
+              color: pink;
            }
        </style>
    <?php
