@@ -64,7 +64,7 @@ body{
 	text-align:left;
 }
 
-.icon, .svg{
+.icon, .icon icon-angle-down, .svg{
 	width:50px;
 	height:40px;
 }
