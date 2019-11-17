@@ -58,7 +58,7 @@ body{
 	
 }
 
-.div{
+.div, .site-content-contain{
 	width: 80%;
 	text-align:left;
 }
