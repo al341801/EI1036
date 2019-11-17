@@ -16,8 +16,17 @@ if ( ! defined( 'WPINC' ) ) exit;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-
-
+//Ej7:Mejora la interficie
+function hook_css() {
+   ?>
+       <style>
+           .wp_head_example {
+               background-color : #f1f1f1;
+           }
+       </style>
+   <?php
+}
+add_action('wp_head', 'hook_css');
 
 //Funcion instalación plugin. Crea tabla
 function MP1_CrearT($tabla){
