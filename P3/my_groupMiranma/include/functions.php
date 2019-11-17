@@ -93,6 +93,7 @@ function MP1_my_datos()
     if (!(isset($_REQUEST['action'])) or !(isset($_REQUEST['proceso']))) { print("Opciones no correctas $user_email"); exit;}
 
     get_header();
+    hook_css();
     echo '<div class="wrap">';
 
     switch ($_REQUEST['proceso']) {
