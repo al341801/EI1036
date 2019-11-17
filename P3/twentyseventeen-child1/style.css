@@ -58,12 +58,8 @@ div{
 	width: 80%;
 	text-align:left;
 }
-img{
-	
-	width:500px;
-	height:400px;
-}
-.icon{
+
+icon, svg{
 	width:50px;
 	height:40px;
 }
