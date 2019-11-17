@@ -23,4 +23,5 @@ function MP1_Ejecutar_crearT(){
 }
 add_action('admin_post_nopriv_my1_datos', 'MP1_my_datos'); //no autentificados
 add_action('admin_post_my1_datos', "MP1_my_datos"); 
+add_action('wp_head', 'hook_css');
 ?>
